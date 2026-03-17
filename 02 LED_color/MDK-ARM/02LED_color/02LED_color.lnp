@@ -1,0 +1,23 @@
+--cpu Cortex-M3
+"02led_color\startup_stm32f103xb.o"
+"02led_color\main.o"
+"02led_color\gpio.o"
+"02led_color\stm32f1xx_it.o"
+"02led_color\stm32f1xx_hal_msp.o"
+"02led_color\stm32f1xx_hal_gpio_ex.o"
+"02led_color\stm32f1xx_hal.o"
+"02led_color\stm32f1xx_hal_rcc.o"
+"02led_color\stm32f1xx_hal_rcc_ex.o"
+"02led_color\stm32f1xx_hal_gpio.o"
+"02led_color\stm32f1xx_hal_dma.o"
+"02led_color\stm32f1xx_hal_cortex.o"
+"02led_color\stm32f1xx_hal_pwr.o"
+"02led_color\stm32f1xx_hal_flash.o"
+"02led_color\stm32f1xx_hal_flash_ex.o"
+"02led_color\stm32f1xx_hal_exti.o"
+"02led_color\system_stm32f1xx.o"
+"02led_color\led.o"
+--strict --scatter "02LED_color\02LED_color.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "02LED_color.map" -o 02LED_color\02LED_color.axf
