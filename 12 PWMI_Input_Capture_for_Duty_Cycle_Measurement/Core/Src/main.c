@@ -1,4 +1,8 @@
 /* USER CODE BEGIN Header */
+/*
+TIM3使用输入捕获测量的TIM2的频率为1000HZ
+根据CUBEMX，TIM2的预分频系数为720-1，ARR值为100-1。计算得到的频率也为1000hz
+*/
 /**
   ******************************************************************************
   * @file           : main.c
@@ -56,14 +60,17 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 		// 通道一上升沿触发，测频率
 		if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1)
 		{
+			// 读取CCR1的值
 			capture = HAL_TIM_ReadCapturedValue(htim,TIM_CHANNEL_1)+1;
 			Freq = 1000000 / capture;//测周法(这个频率是TIM3定时器的频率)
 		}
 		// 通道二下降沿触发，测占空比
 		else if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2)
 		{
-			uint32_t capture2 = HAL_TIM_ReadCapturedValue(htim,TIM_CHANNEL_1)+1;
-			duty = (capture2 / capture) * 100;
+			// 读取CCR2的值
+			uint32_t capture2 = HAL_TIM_ReadCapturedValue(htim,TIM_CHANNEL_2)+1;
+			duty = (capture2 * 100) / capture;
+			//			duty = capture2 / capture * 100; // 计算不出占空比
 		}
 		
 	}
@@ -124,8 +131,8 @@ int main(void)
   HAL_TIM_IC_Start_IT(&htim3, TIM_CHANNEL_1); // TI1FP1，测频率
   HAL_TIM_IC_Start_IT(&htim3, TIM_CHANNEL_2);	// TI2FP2，测占空比
   OLED_Clear();
-  OLED_ShowString(1,1,"Freq:00000HZ");
-	OLED_ShowString(2,1,"Duty:000%");
+  OLED_ShowString(1,1,"Freq:");
+  OLED_ShowString(2,1,"Duty:");
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -199,8 +206,7 @@ void Error_Handler(void)
   }
   /* USER CODE END Error_Handler_Debug */
 }
-
-#ifdef  USE_FULL_ASSERT
+#ifdef USE_FULL_ASSERT
 /**
   * @brief  Reports the name of the source file and the source line number
   *         where the assert_param error has occurred.

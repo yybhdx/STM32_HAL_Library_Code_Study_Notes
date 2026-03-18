@@ -1,4 +1,8 @@
 /* USER CODE BEGIN Header */
+/*
+TIM3使用输入捕获测量的TIM2的频率为1000HZ
+根据CUBEMX，TIM2的预分频系数为720-1，ARR值为100-1。计算得到的频率也为1000hz
+*/
 /**
   ******************************************************************************
   * @file           : main.c
@@ -110,7 +114,7 @@ int main(void)
   HAL_TIM_IC_Start_IT(&htim3, TIM_CHANNEL_1); // TI1FP1，测频率 
   
   OLED_Clear();
-  OLED_ShowString(1,1,"Freq:00000HZ");
+  OLED_ShowString(1,1,"Freq:");
 
   /* USER CODE END 2 */
 
@@ -183,8 +187,7 @@ void Error_Handler(void)
   }
   /* USER CODE END Error_Handler_Debug */
 }
-
-#ifdef  USE_FULL_ASSERT
+#ifdef USE_FULL_ASSERT
 /**
   * @brief  Reports the name of the source file and the source line number
   *         where the assert_param error has occurred.
