@@ -1,14 +1,4 @@
 /* USER CODE BEGIN Header */
-
-/*
-代码中：
-
-每秒读取一次（HAL_Delay(1000)）
-
-函数返回的是1秒内编码器产生的净脉冲数
-
-这个值确实是速度的一种表示，但需要转换才能得到物理意义上的速度
-*/
 /**
   ******************************************************************************
   * @file           : main.c
@@ -16,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2026 STMicroelectronics.
+  * Copyright (c) 2025 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -28,17 +18,20 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "tim.h"
+#include "adc.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+// ���OLEDͷ�ļ�
 #include "OLED.h"
 
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
+	char arr[] = {'B'};
+	char arr1[] = "Hello World!"; // �Զ����\0
 
 /* USER CODE END PTD */
 
@@ -55,20 +48,6 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
-int16_t GetEncoderSpeed()
-{
-	int16_t tmp;
-	
-	// 获取指定定时器的当前计数值
-	tmp = __HAL_TIM_GET_COUNTER(&htim3);
-	
-	// 修改指定定时器的当前计数值为0
-	__HAL_TIM_SET_COUNTER(&htim3, 0);
-	
-	return tmp;
-	
-}
 
 /* USER CODE END PV */
 
@@ -91,6 +70,8 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
+	uint16_t value = 0;
+	float voltage = 0;
 
   /* USER CODE END 1 */
 
@@ -112,29 +93,54 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_TIM3_Init();
+  MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
 	OLED_Init();
 	OLED_Clear();
-	/*
-	启动定时器编码器模式
-	&htim3:定时器句柄指针
-	TIM_CHANNEL_ALL:同时启动通道1和通道2（因为正交编码器通常需要AB两相输入）
-	*/
-	HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);
-	OLED_ShowString(1, 1, "Pulse:");
-
+	
+	// 启动 ADC 硬件自校准
+	// &hadc1:需要校准的 ADC 外设
+	HAL_ADCEx_Calibration_Start(&hadc1); 
+	OLED_ShowString(1, 1, "value:");
+	OLED_ShowString(2, 1, "voltage:0.00v");
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+	/*
+	因为CUBEMX配置的ADC是单次转换非连续
+	所以需要在while中不断重新启动ADC来持续读取ADC的值
+	*/
   while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-		OLED_ShowSignedNum(1, 7, GetEncoderSpeed(), 5);
+		// 开启 ADC 并启动常规通道转换
+		HAL_ADC_Start(&hadc1);
+		
+		// 等待（阻塞）ADC 常规通道转换完成
+		// HAL_MAX_DELAY:无限等待
+		HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
+		
+		// 得到ADC的采样值
+		value = HAL_ADC_GetValue(&hadc1);
+		
+		// 将采样值转化为电压值
+		voltage = (float) value / 4096 * 3.3;
+		
+		// OLED显示adc的转化值
+		OLED_ShowNum(1, 7, value, 4);
+		
+		// OLED显示电压整数
+		OLED_ShowNum(2, 9, (uint16_t)voltage, 1);
+		
+		// OLED显示电压小数
+		OLED_ShowNum(2, 11, (uint16_t)(voltage*100)%100, 2);
+		
 		HAL_Delay(1000);
+		
+		
   }
   /* USER CODE END 3 */
 }
@@ -147,6 +153,7 @@ void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
 
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
@@ -173,6 +180,12 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_ADC;
+  PeriphClkInit.AdcClockSelection = RCC_ADCPCLK2_DIV6;
+  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
     Error_Handler();
   }
