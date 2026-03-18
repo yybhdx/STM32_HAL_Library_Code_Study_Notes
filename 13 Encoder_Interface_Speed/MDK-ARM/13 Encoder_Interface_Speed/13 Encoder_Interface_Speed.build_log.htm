@@ -1,0 +1,109 @@
+<html>
+<body>
+<pre>
+<h1>�Vision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ��Vision V5.25.0.0
+Copyright (C) 2017 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: 1 Administrator, 1, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.25.0.0
+Toolchain Path:  E:\keil MDK\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.25.0.0
+Dialog DLL:      DCM.DLL V1.17.0.0
+Target DLL:      CMSIS_AGDI.dll V1.28.8.0
+Dialog DLL:      TCM.DLL V1.34.0.0
+ 
+<h2>Project:</h2>
+E:\GitHub\STM32_HAL_Library_Code\13 Encoder_Interface_Speed\MDK-ARM\13 Encoder_Interface_Speed.uvprojx
+Project File Date:  03/18/2026
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'E:\keil MDK\ARM\ARMCC\Bin'
+Build target '13 Encoder_Interface_Speed'
+assembling startup_stm32f103xb.s...
+compiling gpio.c...
+compiling main.c...
+compiling tim.c...
+compiling stm32f1xx_hal_msp.c...
+compiling stm32f1xx_it.c...
+compiling stm32f1xx_hal_gpio_ex.c...
+compiling stm32f1xx_hal.c...
+compiling stm32f1xx_hal_tim_ex.c...
+compiling stm32f1xx_hal_tim.c...
+compiling stm32f1xx_hal_rcc.c...
+compiling stm32f1xx_hal_rcc_ex.c...
+compiling stm32f1xx_hal_gpio.c...
+compiling stm32f1xx_hal_dma.c...
+compiling stm32f1xx_hal_cortex.c...
+compiling stm32f1xx_hal_pwr.c...
+compiling stm32f1xx_hal_exti.c...
+compiling stm32f1xx_hal_flash_ex.c...
+compiling stm32f1xx_hal_flash.c...
+compiling system_stm32f1xx.c...
+compiling OLED.c...
+..\Drivers\OLED\OLED.c(19): warning:  #188-D: enumerated type mixed with another type
+  	OLED_W_SCL(1);
+..\Drivers\OLED\OLED.c(20): warning:  #188-D: enumerated type mixed with another type
+  	OLED_W_SDA(1);
+..\Drivers\OLED\OLED.c(30): warning:  #188-D: enumerated type mixed with another type
+  	OLED_W_SDA(1);
+..\Drivers\OLED\OLED.c(31): warning:  #188-D: enumerated type mixed with another type
+  	OLED_W_SCL(1);
+..\Drivers\OLED\OLED.c(32): warning:  #188-D: enumerated type mixed with another type
+  	OLED_W_SDA(0);
+..\Drivers\OLED\OLED.c(33): warning:  #188-D: enumerated type mixed with another type
+  	OLED_W_SCL(0);
+..\Drivers\OLED\OLED.c(43): warning:  #188-D: enumerated type mixed with another type
+  	OLED_W_SDA(0);
+..\Drivers\OLED\OLED.c(44): warning:  #188-D: enumerated type mixed with another type
+  	OLED_W_SCL(1);
+..\Drivers\OLED\OLED.c(45): warning:  #188-D: enumerated type mixed with another type
+  	OLED_W_SDA(1);
+..\Drivers\OLED\OLED.c(58): warning:  #188-D: enumerated type mixed with another type
+  		OLED_W_SDA(!!(Byte & (0x80 >> i)));
+..\Drivers\OLED\OLED.c(59): warning:  #188-D: enumerated type mixed with another type
+  		OLED_W_SCL(1);
+..\Drivers\OLED\OLED.c(60): warning:  #188-D: enumerated type mixed with another type
+  		OLED_W_SCL(0);
+..\Drivers\OLED\OLED.c(62): warning:  #188-D: enumerated type mixed with another type
+  	OLED_W_SCL(1);	//额外的一个时钟，不处理应答信�?
+..\Drivers\OLED\OLED.c(63): warning:  #188-D: enumerated type mixed with another type
+  	OLED_W_SCL(0);
+..\Drivers\OLED\OLED.c: 14 warnings, 0 errors
+linking...
+Program Size: Code=4112 RO-data=1824 RW-data=16 ZI-data=1096  
+FromELF: creating hex file...
+"13 Encoder_Interface_Speed\13 Encoder_Interface_Speed.axf" - 0 Error(s), 14 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.2.0.pack
+                ARM.CMSIS.5.2.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.0.2
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.1.0.pack
+                Keil.STM32F1xx_DFP.2.1.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_13_Encoder_Interface_Speed
+  E:\keil MDK\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include
+  E:\keil MDK\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.0.2
+Build Time Elapsed:  00:00:16
+</pre>
+</body>
+</html>
