@@ -54,9 +54,9 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 	if(hadc == &hadc1)
 	{
 		OLED_ShowNum(1, 1, values[0], 5);
-		OLED_ShowNum(2, 1, values[0], 5);
-		OLED_ShowNum(3, 1, values[0], 5);
-		OLED_ShowNum(4, 1, values[0], 5);
+		OLED_ShowNum(2, 1, values[1], 5);
+		OLED_ShowNum(3, 1, values[2], 5);
+		OLED_ShowNum(4, 1, values[3], 5);
 	}
 	
 }
@@ -106,7 +106,7 @@ int main(void)
   MX_DMA_Init();
   MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
-  OLED_Init(); // ��ʼ��OLED��ʾ��
+  OLED_Init();
 	OLED_Clear();
 	
 	HAL_ADCEx_Calibration_Start(&hadc1); // adc校准
@@ -117,6 +117,9 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+		// 启动ADC转运，也启动DMA开始转运
+		HAL_ADC_Start_DMA(&hadc1, (uint32_t*) values, 4);
+		HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
