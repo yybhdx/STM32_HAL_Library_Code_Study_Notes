@@ -92,6 +92,7 @@ int main(void)
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
   	OLED_Init(); // 初始化OLED显示屏
+	OLED_Clear();
 	// 在第一行 第一列显示字符'A'
 	OLED_ShowChar(1, 1, 'A'); // 在指定位置显示单个字符
 	
