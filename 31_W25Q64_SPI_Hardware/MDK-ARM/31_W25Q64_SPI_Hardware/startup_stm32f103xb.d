@@ -1,0 +1,1 @@
+31_w25q64_spi_hardware\startup_stm32f103xb.o: startup_stm32f103xb.s

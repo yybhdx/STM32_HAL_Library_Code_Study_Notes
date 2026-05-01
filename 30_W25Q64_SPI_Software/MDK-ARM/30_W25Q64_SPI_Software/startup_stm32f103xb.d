@@ -1,0 +1,1 @@
+30_w25q64_spi_software\startup_stm32f103xb.o: startup_stm32f103xb.s

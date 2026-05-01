@@ -1,0 +1,8 @@
+Error: L6218E: Undefined symbol MyI2c_Start (referred from main.o).
+Error: L6218E: Undefined symbol OLED_ShowSignNum (referred from main.o).
+Not enough information to list image symbols.
+Finished: 1 information, 0 warning and 2 error messages.
+
+ ERROR  link failed !, exit code: 1
+
+ ERROR  build failed !, elapsed time 0:0:0

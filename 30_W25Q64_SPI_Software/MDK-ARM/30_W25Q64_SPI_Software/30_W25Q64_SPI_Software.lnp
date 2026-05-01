@@ -1,0 +1,25 @@
+--cpu Cortex-M3
+"30_w25q64_spi_software\startup_stm32f103xb.o"
+"30_w25q64_spi_software\main.o"
+"30_w25q64_spi_software\gpio.o"
+"30_w25q64_spi_software\stm32f1xx_it.o"
+"30_w25q64_spi_software\stm32f1xx_hal_msp.o"
+"30_w25q64_spi_software\stm32f1xx_hal_gpio_ex.o"
+"30_w25q64_spi_software\stm32f1xx_hal.o"
+"30_w25q64_spi_software\stm32f1xx_hal_rcc.o"
+"30_w25q64_spi_software\stm32f1xx_hal_rcc_ex.o"
+"30_w25q64_spi_software\stm32f1xx_hal_gpio.o"
+"30_w25q64_spi_software\stm32f1xx_hal_dma.o"
+"30_w25q64_spi_software\stm32f1xx_hal_cortex.o"
+"30_w25q64_spi_software\stm32f1xx_hal_pwr.o"
+"30_w25q64_spi_software\stm32f1xx_hal_flash.o"
+"30_w25q64_spi_software\stm32f1xx_hal_flash_ex.o"
+"30_w25q64_spi_software\stm32f1xx_hal_exti.o"
+"30_w25q64_spi_software\system_stm32f1xx.o"
+"30_w25q64_spi_software\oled.o"
+"30_w25q64_spi_software\myspi.o"
+"30_w25q64_spi_software\w25q64.o"
+--strict --scatter "30_W25Q64_SPI_Software\30_W25Q64_SPI_Software.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "30_W25Q64_SPI_Software.map" -o 30_W25Q64_SPI_Software\30_W25Q64_SPI_Software.axf

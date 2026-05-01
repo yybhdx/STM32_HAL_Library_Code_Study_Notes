@@ -1,0 +1,1 @@
+29_mpu6050_ software\startup_stm32f103xb.o: startup_stm32f103xb.s

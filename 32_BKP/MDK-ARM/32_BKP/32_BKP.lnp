@@ -1,0 +1,26 @@
+--cpu Cortex-M3
+"32_bkp\startup_stm32f103xb.o"
+"32_bkp\main.o"
+"32_bkp\gpio.o"
+"32_bkp\rtc.o"
+"32_bkp\stm32f1xx_it.o"
+"32_bkp\stm32f1xx_hal_msp.o"
+"32_bkp\stm32f1xx_hal_gpio_ex.o"
+"32_bkp\stm32f1xx_hal_rtc.o"
+"32_bkp\stm32f1xx_hal_rtc_ex.o"
+"32_bkp\stm32f1xx_hal.o"
+"32_bkp\stm32f1xx_hal_rcc.o"
+"32_bkp\stm32f1xx_hal_rcc_ex.o"
+"32_bkp\stm32f1xx_hal_gpio.o"
+"32_bkp\stm32f1xx_hal_dma.o"
+"32_bkp\stm32f1xx_hal_cortex.o"
+"32_bkp\stm32f1xx_hal_pwr.o"
+"32_bkp\stm32f1xx_hal_flash.o"
+"32_bkp\stm32f1xx_hal_flash_ex.o"
+"32_bkp\stm32f1xx_hal_exti.o"
+"32_bkp\system_stm32f1xx.o"
+"32_bkp\oled.o"
+--strict --scatter "32_BKP\32_BKP.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "32_BKP.map" -o 32_BKP\32_BKP.axf

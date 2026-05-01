@@ -1,0 +1,27 @@
+--cpu Cortex-M3
+"31_w25q64_spi_hardware\startup_stm32f103xb.o"
+"31_w25q64_spi_hardware\main.o"
+"31_w25q64_spi_hardware\gpio.o"
+"31_w25q64_spi_hardware\spi.o"
+"31_w25q64_spi_hardware\stm32f1xx_it.o"
+"31_w25q64_spi_hardware\stm32f1xx_hal_msp.o"
+"31_w25q64_spi_hardware\stm32f1xx_hal_gpio_ex.o"
+"31_w25q64_spi_hardware\stm32f1xx_hal_spi.o"
+"31_w25q64_spi_hardware\stm32f1xx_hal.o"
+"31_w25q64_spi_hardware\stm32f1xx_hal_rcc.o"
+"31_w25q64_spi_hardware\stm32f1xx_hal_rcc_ex.o"
+"31_w25q64_spi_hardware\stm32f1xx_hal_gpio.o"
+"31_w25q64_spi_hardware\stm32f1xx_hal_dma.o"
+"31_w25q64_spi_hardware\stm32f1xx_hal_cortex.o"
+"31_w25q64_spi_hardware\stm32f1xx_hal_pwr.o"
+"31_w25q64_spi_hardware\stm32f1xx_hal_flash.o"
+"31_w25q64_spi_hardware\stm32f1xx_hal_flash_ex.o"
+"31_w25q64_spi_hardware\stm32f1xx_hal_exti.o"
+"31_w25q64_spi_hardware\system_stm32f1xx.o"
+"31_w25q64_spi_hardware\oled.o"
+"31_w25q64_spi_hardware\myspi.o"
+"31_w25q64_spi_hardware\w25q64.o"
+--strict --scatter "31_W25Q64_SPI_Hardware\31_W25Q64_SPI_Hardware.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "31_W25Q64_SPI_Hardware.map" -o 31_W25Q64_SPI_Hardware\31_W25Q64_SPI_Hardware.axf
