@@ -27,3 +27,4 @@
 05oled\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 05oled\main.o: ../Core/Inc/gpio.h
 05oled\main.o: ../Drivers/OLED/OLED.h
+05oled\main.o: ../Core/Inc/stm32f1xx_it.h

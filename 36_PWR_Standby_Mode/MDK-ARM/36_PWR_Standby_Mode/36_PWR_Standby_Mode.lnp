@@ -1,0 +1,22 @@
+--cpu Cortex-M3
+"36_pwr_standby_mode\startup_stm32f103xb.o"
+"36_pwr_standby_mode\main.o"
+"36_pwr_standby_mode\gpio.o"
+"36_pwr_standby_mode\stm32f1xx_it.o"
+"36_pwr_standby_mode\stm32f1xx_hal_msp.o"
+"36_pwr_standby_mode\stm32f1xx_hal_gpio_ex.o"
+"36_pwr_standby_mode\stm32f1xx_hal.o"
+"36_pwr_standby_mode\stm32f1xx_hal_rcc.o"
+"36_pwr_standby_mode\stm32f1xx_hal_rcc_ex.o"
+"36_pwr_standby_mode\stm32f1xx_hal_gpio.o"
+"36_pwr_standby_mode\stm32f1xx_hal_dma.o"
+"36_pwr_standby_mode\stm32f1xx_hal_cortex.o"
+"36_pwr_standby_mode\stm32f1xx_hal_pwr.o"
+"36_pwr_standby_mode\stm32f1xx_hal_flash.o"
+"36_pwr_standby_mode\stm32f1xx_hal_flash_ex.o"
+"36_pwr_standby_mode\stm32f1xx_hal_exti.o"
+"36_pwr_standby_mode\system_stm32f1xx.o"
+--library_type=microlib --strict --scatter "36_PWR_Standby_Mode\36_PWR_Standby_Mode.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "36_PWR_Standby_Mode.map" -o 36_PWR_Standby_Mode\36_PWR_Standby_Mode.axf

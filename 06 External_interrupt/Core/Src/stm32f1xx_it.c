@@ -221,7 +221,7 @@ void EXTI15_10_IRQHandler(void)
 
 /* USER CODE BEGIN 1 */
 
-uint32_t EXTI_GetCounter(void)
+uint32_t Get_Counter(void)
 {
 	return count;
 }

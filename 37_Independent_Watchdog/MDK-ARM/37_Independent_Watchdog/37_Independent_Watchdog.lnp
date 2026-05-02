@@ -1,0 +1,25 @@
+--cpu Cortex-M3
+"37_independent_watchdog\startup_stm32f103xb.o"
+"37_independent_watchdog\main.o"
+"37_independent_watchdog\gpio.o"
+"37_independent_watchdog\iwdg.o"
+"37_independent_watchdog\stm32f1xx_it.o"
+"37_independent_watchdog\stm32f1xx_hal_msp.o"
+"37_independent_watchdog\stm32f1xx_hal_gpio_ex.o"
+"37_independent_watchdog\stm32f1xx_hal_iwdg.o"
+"37_independent_watchdog\stm32f1xx_hal.o"
+"37_independent_watchdog\stm32f1xx_hal_rcc.o"
+"37_independent_watchdog\stm32f1xx_hal_rcc_ex.o"
+"37_independent_watchdog\stm32f1xx_hal_gpio.o"
+"37_independent_watchdog\stm32f1xx_hal_dma.o"
+"37_independent_watchdog\stm32f1xx_hal_cortex.o"
+"37_independent_watchdog\stm32f1xx_hal_pwr.o"
+"37_independent_watchdog\stm32f1xx_hal_flash.o"
+"37_independent_watchdog\stm32f1xx_hal_flash_ex.o"
+"37_independent_watchdog\stm32f1xx_hal_exti.o"
+"37_independent_watchdog\system_stm32f1xx.o"
+"37_independent_watchdog\oled.o"
+--strict --scatter "37_Independent_Watchdog\37_Independent_Watchdog.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "37_Independent_Watchdog.map" -o 37_Independent_Watchdog\37_Independent_Watchdog.axf

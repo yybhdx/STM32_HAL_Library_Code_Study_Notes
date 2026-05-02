@@ -1,0 +1,25 @@
+--cpu Cortex-M3
+"38_window_watchdog\startup_stm32f103xb.o"
+"38_window_watchdog\main.o"
+"38_window_watchdog\gpio.o"
+"38_window_watchdog\wwdg.o"
+"38_window_watchdog\stm32f1xx_it.o"
+"38_window_watchdog\stm32f1xx_hal_msp.o"
+"38_window_watchdog\stm32f1xx_hal_gpio_ex.o"
+"38_window_watchdog\stm32f1xx_hal_wwdg.o"
+"38_window_watchdog\stm32f1xx_hal.o"
+"38_window_watchdog\stm32f1xx_hal_rcc.o"
+"38_window_watchdog\stm32f1xx_hal_rcc_ex.o"
+"38_window_watchdog\stm32f1xx_hal_gpio.o"
+"38_window_watchdog\stm32f1xx_hal_dma.o"
+"38_window_watchdog\stm32f1xx_hal_cortex.o"
+"38_window_watchdog\stm32f1xx_hal_pwr.o"
+"38_window_watchdog\stm32f1xx_hal_flash.o"
+"38_window_watchdog\stm32f1xx_hal_flash_ex.o"
+"38_window_watchdog\stm32f1xx_hal_exti.o"
+"38_window_watchdog\system_stm32f1xx.o"
+"38_window_watchdog\oled.o"
+--strict --scatter "38_Window_Watchdog\38_Window_Watchdog.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "38_Window_Watchdog.map" -o 38_Window_Watchdog\38_Window_Watchdog.axf

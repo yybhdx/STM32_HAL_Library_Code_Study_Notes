@@ -1,0 +1,26 @@
+--cpu Cortex-M3
+"33_rtc\startup_stm32f103xb.o"
+"33_rtc\main.o"
+"33_rtc\gpio.o"
+"33_rtc\rtc.o"
+"33_rtc\stm32f1xx_it.o"
+"33_rtc\stm32f1xx_hal_msp.o"
+"33_rtc\stm32f1xx_hal_gpio_ex.o"
+"33_rtc\stm32f1xx_hal_rtc.o"
+"33_rtc\stm32f1xx_hal_rtc_ex.o"
+"33_rtc\stm32f1xx_hal.o"
+"33_rtc\stm32f1xx_hal_rcc.o"
+"33_rtc\stm32f1xx_hal_rcc_ex.o"
+"33_rtc\stm32f1xx_hal_gpio.o"
+"33_rtc\stm32f1xx_hal_dma.o"
+"33_rtc\stm32f1xx_hal_cortex.o"
+"33_rtc\stm32f1xx_hal_pwr.o"
+"33_rtc\stm32f1xx_hal_flash.o"
+"33_rtc\stm32f1xx_hal_flash_ex.o"
+"33_rtc\stm32f1xx_hal_exti.o"
+"33_rtc\system_stm32f1xx.o"
+"33_rtc\oled.o"
+--strict --scatter "33_RTC\33_RTC.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "33_RTC.map" -o 33_RTC\33_RTC.axf

@@ -1,0 +1,26 @@
+--cpu Cortex-M3
+"25\startup_stm32f103xb.o"
+"25\main.o"
+"25\gpio.o"
+"25\dma.o"
+"25\usart.o"
+"25\stm32f1xx_it.o"
+"25\stm32f1xx_hal_msp.o"
+"25\stm32f1xx_hal_gpio_ex.o"
+"25\stm32f1xx_hal_uart.o"
+"25\stm32f1xx_hal.o"
+"25\stm32f1xx_hal_rcc.o"
+"25\stm32f1xx_hal_rcc_ex.o"
+"25\stm32f1xx_hal_gpio.o"
+"25\stm32f1xx_hal_dma.o"
+"25\stm32f1xx_hal_cortex.o"
+"25\stm32f1xx_hal_pwr.o"
+"25\stm32f1xx_hal_flash.o"
+"25\stm32f1xx_hal_flash_ex.o"
+"25\stm32f1xx_hal_exti.o"
+"25\system_stm32f1xx.o"
+"25\oled.o"
+--strict --scatter "25\25.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "25.map" -o 25\25.axf

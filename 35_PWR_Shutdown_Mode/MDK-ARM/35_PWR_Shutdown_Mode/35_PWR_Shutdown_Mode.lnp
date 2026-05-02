@@ -1,0 +1,23 @@
+--cpu Cortex-M3
+"35_pwr_shutdown_mode\startup_stm32f103xb.o"
+"35_pwr_shutdown_mode\main.o"
+"35_pwr_shutdown_mode\gpio.o"
+"35_pwr_shutdown_mode\stm32f1xx_it.o"
+"35_pwr_shutdown_mode\stm32f1xx_hal_msp.o"
+"35_pwr_shutdown_mode\stm32f1xx_hal_gpio_ex.o"
+"35_pwr_shutdown_mode\stm32f1xx_hal.o"
+"35_pwr_shutdown_mode\stm32f1xx_hal_rcc.o"
+"35_pwr_shutdown_mode\stm32f1xx_hal_rcc_ex.o"
+"35_pwr_shutdown_mode\stm32f1xx_hal_gpio.o"
+"35_pwr_shutdown_mode\stm32f1xx_hal_dma.o"
+"35_pwr_shutdown_mode\stm32f1xx_hal_cortex.o"
+"35_pwr_shutdown_mode\stm32f1xx_hal_pwr.o"
+"35_pwr_shutdown_mode\stm32f1xx_hal_flash.o"
+"35_pwr_shutdown_mode\stm32f1xx_hal_flash_ex.o"
+"35_pwr_shutdown_mode\stm32f1xx_hal_exti.o"
+"35_pwr_shutdown_mode\system_stm32f1xx.o"
+"35_pwr_shutdown_mode\oled.o"
+--strict --scatter "35_PWR_Shutdown_Mode\35_PWR_Shutdown_Mode.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "35_PWR_Shutdown_Mode.map" -o 35_PWR_Shutdown_Mode\35_PWR_Shutdown_Mode.axf

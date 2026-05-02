@@ -1,0 +1,1 @@
+36_pwr_standby_mode\startup_stm32f103xb.o: startup_stm32f103xb.s

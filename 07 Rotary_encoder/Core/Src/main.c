@@ -24,7 +24,7 @@
 /* USER CODE BEGIN Includes */
 // ���OLEDͷ�ļ�
 #include "OLED.h"
-
+#include "stm32f1xx_it.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -106,7 +106,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  OLED_ShowSignedNum(1, 8, EXTI_GetCounter(), 5);
+	  OLED_ShowSignedNum(1, 8, Get_Counter(), 5);
   }
   /* USER CODE END 3 */
 }
