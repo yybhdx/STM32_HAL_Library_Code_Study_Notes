@@ -1,0 +1,24 @@
+--cpu Cortex-M3
+"42_bluetooth_serial_communication\startup_stm32f103xb.o"
+"42_bluetooth_serial_communication\main.o"
+"42_bluetooth_serial_communication\gpio.o"
+"42_bluetooth_serial_communication\usart.o"
+"42_bluetooth_serial_communication\stm32f1xx_it.o"
+"42_bluetooth_serial_communication\stm32f1xx_hal_msp.o"
+"42_bluetooth_serial_communication\stm32f1xx_hal_gpio_ex.o"
+"42_bluetooth_serial_communication\stm32f1xx_hal_uart.o"
+"42_bluetooth_serial_communication\stm32f1xx_hal.o"
+"42_bluetooth_serial_communication\stm32f1xx_hal_rcc.o"
+"42_bluetooth_serial_communication\stm32f1xx_hal_rcc_ex.o"
+"42_bluetooth_serial_communication\stm32f1xx_hal_gpio.o"
+"42_bluetooth_serial_communication\stm32f1xx_hal_dma.o"
+"42_bluetooth_serial_communication\stm32f1xx_hal_cortex.o"
+"42_bluetooth_serial_communication\stm32f1xx_hal_pwr.o"
+"42_bluetooth_serial_communication\stm32f1xx_hal_flash.o"
+"42_bluetooth_serial_communication\stm32f1xx_hal_flash_ex.o"
+"42_bluetooth_serial_communication\stm32f1xx_hal_exti.o"
+"42_bluetooth_serial_communication\system_stm32f1xx.o"
+--strict --scatter "42_Bluetooth_Serial_Communication\42_Bluetooth_Serial_Communication.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "42_Bluetooth_Serial_Communication.map" -o 42_Bluetooth_Serial_Communication\42_Bluetooth_Serial_Communication.axf

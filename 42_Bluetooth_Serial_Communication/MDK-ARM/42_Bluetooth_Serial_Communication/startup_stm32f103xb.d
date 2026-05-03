@@ -1,0 +1,1 @@
+42_bluetooth_serial_communication\startup_stm32f103xb.o: startup_stm32f103xb.s
