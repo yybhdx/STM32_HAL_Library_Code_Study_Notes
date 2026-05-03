@@ -26,3 +26,4 @@
 39_read_internal_flash\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
 39_read_internal_flash\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 39_read_internal_flash\main.o: ../Core/Inc/gpio.h
+39_read_internal_flash\main.o: ..\Drivers\OLED\OLED.h

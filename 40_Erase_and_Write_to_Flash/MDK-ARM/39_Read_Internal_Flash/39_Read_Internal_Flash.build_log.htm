@@ -21,13 +21,62 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.3.0.0
 Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
-D:\Embedded\STM32\HAL Jiangxie TechnologySTM32\STM32_HAL_Library_Code\39_Read_Internal_Flash\MDK-ARM\39_Read_Internal_Flash.uvprojx
+D:\Embedded\STM32\HAL Jiangxie TechnologySTM32\STM32_HAL_Library_Code\40_Erase_and_Write_to_Flash\MDK-ARM\39_Read_Internal_Flash.uvprojx
 Project File Date:  05/02/2026
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Software\Keil\keil_Core\ARM\ARMCC\Bin'
 Build target '39_Read_Internal_Flash'
-"39_Read_Internal_Flash\39_Read_Internal_Flash.axf" - 0 Error(s), 0 Warning(s).
+compiling stm32f1xx_hal_msp.c...
+compiling main.c...
+compiling stm32f1xx_hal_cortex.c...
+compiling stm32f1xx_hal.c...
+compiling stm32f1xx_hal_flash.c...
+compiling stm32f1xx_hal_gpio.c...
+compiling stm32f1xx_hal_flash_ex.c...
+compiling stm32f1xx_hal_gpio_ex.c...
+compiling stm32f1xx_hal_exti.c...
+compiling gpio.c...
+compiling stm32f1xx_hal_rcc_ex.c...
+compiling stm32f1xx_hal_dma.c...
+compiling stm32f1xx_it.c...
+compiling stm32f1xx_hal_pwr.c...
+compiling stm32f1xx_hal_rcc.c...
+compiling system_stm32f1xx.c...
+compiling OLED.c...
+..\Drivers\OLED\OLED.c(19): warning:  #188-D: enumerated type mixed with another type
+  	OLED_W_SCL(1);
+..\Drivers\OLED\OLED.c(20): warning:  #188-D: enumerated type mixed with another type
+  	OLED_W_SDA(1);
+..\Drivers\OLED\OLED.c(30): warning:  #188-D: enumerated type mixed with another type
+  	OLED_W_SDA(1);
+..\Drivers\OLED\OLED.c(31): warning:  #188-D: enumerated type mixed with another type
+  	OLED_W_SCL(1);
+..\Drivers\OLED\OLED.c(32): warning:  #188-D: enumerated type mixed with another type
+  	OLED_W_SDA(0);
+..\Drivers\OLED\OLED.c(33): warning:  #188-D: enumerated type mixed with another type
+  	OLED_W_SCL(0);
+..\Drivers\OLED\OLED.c(43): warning:  #188-D: enumerated type mixed with another type
+  	OLED_W_SDA(0);
+..\Drivers\OLED\OLED.c(44): warning:  #188-D: enumerated type mixed with another type
+  	OLED_W_SCL(1);
+..\Drivers\OLED\OLED.c(45): warning:  #188-D: enumerated type mixed with another type
+  	OLED_W_SDA(1);
+..\Drivers\OLED\OLED.c(58): warning:  #188-D: enumerated type mixed with another type
+  		OLED_W_SDA(!!(Byte & (0x80 >> i)));
+..\Drivers\OLED\OLED.c(59): warning:  #188-D: enumerated type mixed with another type
+  		OLED_W_SCL(1);
+..\Drivers\OLED\OLED.c(60): warning:  #188-D: enumerated type mixed with another type
+  		OLED_W_SCL(0);
+..\Drivers\OLED\OLED.c(62): warning:  #188-D: enumerated type mixed with another type
+  	OLED_W_SCL(1);	//额外的一个时钟，不处理应答信�?
+..\Drivers\OLED\OLED.c(63): warning:  #188-D: enumerated type mixed with another type
+  	OLED_W_SCL(0);
+..\Drivers\OLED\OLED.c: 14 warnings, 0 errors
+linking...
+Program Size: Code=4088 RO-data=304 RW-data=16 ZI-data=1664  
+FromELF: creating hex file...
+"39_Read_Internal_Flash\39_Read_Internal_Flash.axf" - 0 Error(s), 14 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -51,7 +100,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE@6.1.0
       Include file:  CMSIS/Core/Include/tz_context.h
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>
