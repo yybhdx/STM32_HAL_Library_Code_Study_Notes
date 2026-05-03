@@ -1,0 +1,23 @@
+--cpu Cortex-M3
+"39_read_internal_flash\startup_stm32f103xb.o"
+"39_read_internal_flash\main.o"
+"39_read_internal_flash\gpio.o"
+"39_read_internal_flash\stm32f1xx_it.o"
+"39_read_internal_flash\stm32f1xx_hal_msp.o"
+"39_read_internal_flash\stm32f1xx_hal_gpio_ex.o"
+"39_read_internal_flash\stm32f1xx_hal.o"
+"39_read_internal_flash\stm32f1xx_hal_rcc.o"
+"39_read_internal_flash\stm32f1xx_hal_rcc_ex.o"
+"39_read_internal_flash\stm32f1xx_hal_gpio.o"
+"39_read_internal_flash\stm32f1xx_hal_dma.o"
+"39_read_internal_flash\stm32f1xx_hal_cortex.o"
+"39_read_internal_flash\stm32f1xx_hal_pwr.o"
+"39_read_internal_flash\stm32f1xx_hal_flash.o"
+"39_read_internal_flash\stm32f1xx_hal_flash_ex.o"
+"39_read_internal_flash\stm32f1xx_hal_exti.o"
+"39_read_internal_flash\system_stm32f1xx.o"
+"39_read_internal_flash\oled.o"
+--strict --scatter "39_Read_Internal_Flash\39_Read_Internal_Flash.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "39_Read_Internal_Flash.map" -o 39_Read_Internal_Flash\39_Read_Internal_Flash.axf
