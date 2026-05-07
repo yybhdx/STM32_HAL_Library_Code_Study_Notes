@@ -29,5 +29,9 @@
 43_sending_data_via_bluetooth_serial_port_water_level_sensor\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 43_sending_data_via_bluetooth_serial_port_water_level_sensor\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 43_sending_data_via_bluetooth_serial_port_water_level_sensor\main.o: ../Core/Inc/adc.h
+43_sending_data_via_bluetooth_serial_port_water_level_sensor\main.o: ../Core/Inc/dma.h
 43_sending_data_via_bluetooth_serial_port_water_level_sensor\main.o: ../Core/Inc/usart.h
 43_sending_data_via_bluetooth_serial_port_water_level_sensor\main.o: ../Core/Inc/gpio.h
+43_sending_data_via_bluetooth_serial_port_water_level_sensor\main.o: D:\Software\Keil\keil_Core\ARM\ARMCC\Bin\..\include\string.h
+43_sending_data_via_bluetooth_serial_port_water_level_sensor\main.o: D:\Software\Keil\keil_Core\ARM\ARMCC\Bin\..\include\stdio.h
+43_sending_data_via_bluetooth_serial_port_water_level_sensor\main.o: ../Drivers/OLED/OLED.h
